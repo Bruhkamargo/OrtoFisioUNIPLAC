@@ -1,3 +1,9 @@
+h1,
+h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
 #DivCad {
   height: auto;
   width: 100%;
@@ -5,27 +11,21 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
   padding: 2% 0;
 }
 
-h1 {
-  text-align: center;
-}
-
 .InputCad {
-  height: 50px;
-  width: 90%;
+  height: 60px;
+  width: 95%;
   display: flex;
   flex-direction: column;
+  padding-left: 5%;
 
   & label {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 30px;
-
   }
 
   & input {
@@ -33,12 +33,11 @@ h1 {
     border: none;
     background-color: transparent;
     border-bottom: 1px solid;
-    width: 80%;
+    width: 90%;
   }
 }
 
 #DivAnamnese {
-  margin-top: 2%;
   height: auto;
   width: 100%;
   background-color: rgb(244, 247, 245);
@@ -49,17 +48,38 @@ h1 {
   align-items: center;
   padding: 2% 0;
 
+  & .SpanHC {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
   & span {
     display: flex;
     width: 90%;
-    height: 50px;
+    height: 60px;
     align-items: flex-start;
     flex-direction: column;
+
+    & input {
+      width: 90%;
+      height: 30px;
+    }
+  }
+
+  & .DivPA {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+
+    & span {
+      & input {
+        width: 140px;
+      }
+    }
   }
 }
 
 #DivExameFísico {
-  margin-top: 2%;
   height: auto;
   width: 100%;
   background-color: rgb(244, 247, 245);
@@ -82,7 +102,6 @@ h1 {
 }
 
 #DivDiagnóstico {
-  margin-top: 2%;
   height: auto;
   width: 100%;
   background-color: rgb(244, 247, 245);
@@ -100,10 +119,36 @@ h1 {
     height: 50px;
     align-items: flex-start;
     flex-direction: column;
+  }
 }
 
-#DivPlanoeConduta {
-
+.TXTArea {
+  height: 120px;
+  resize: none;
+  width: 90%;
 }
 
+footer {
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  & button {
+    width: 60%;
+    height: 35px;
+  }
+
+  & h2 {
+    color: white;
+
+    & .Span1 {
+      color: lime;
+    }
+    
+    & .Span2 {
+      color: darkblue;
+    }
+  }
 }

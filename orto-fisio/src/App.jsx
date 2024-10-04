@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 import './App.css'
 
@@ -6,7 +6,10 @@ const App = () => {
 
   return (
     <>
-      <h1>Ficha de Avaliação em Ortopedia, Traumatologia e Reumatologia</h1>
+      <header>
+        <h1>Ficha de Avaliação em Ortopedia, Traumatologia e Reumatologia</h1>
+      </header>
+
       <div id='DivCad'>
         <h2>Cadastro</h2>
 
@@ -61,35 +64,35 @@ const App = () => {
         <h2>Anamnese:</h2>
         <span>
           <label>Queixa Principal:</label>
-          <textarea></textarea>
+          <textarea className="TXTArea" />
         </span>
         <span>
           <label>HDP e HDA:</label>
-          <textarea></textarea>
+          <textarea className="TXTArea" />
         </span>
         <span>
           <label>História Social:</label>
-          <textarea></textarea>
+          <textarea className="TXTArea" />
         </span>
         <span>
           <label>Exames Complamentares:</label>
-          <textarea></textarea>
+          <input type='text'></input>
         </span>
-        <span>
+        <span>{/**Sim ou não */}
           <label>Medicamentos em uso:</label>
-          <textarea></textarea>
+          <input type='text'></input>
         </span>
-        <span>
+        <span>{/**Sim ou não */}
           <label>Cirurgias:</label>
-          <textarea></textarea>
+          <input type='text'></input>
         </span>
-        <span>
+        <span>{/**Sim ou não */}
           <label>Tratamentos anteriores:</label>
-          <textarea></textarea>
+          <input type='text'></input>
         </span>
       </div>
 
-      <div id='DivExameFísico'>
+      <div id='DivAnamnese'>
         <h2>Exame Físico:</h2>
         <span>
           <label>Peso:</label>
@@ -100,106 +103,148 @@ const App = () => {
           <input type="text" />
         </span>
         <span>
-          <label>IMC:</label>
-          <input type="text" />
+          <label>IMC Pontuação:</label>
           <input type="text" />
         </span>
+
         <h3>Sinais Vitais:</h3>
-        <label>PA:</label>
-        <input type="text" />
-        <label>FR(irpm):</label>
-        <input type="text" />
-        <label>FC(bpm):</label>
-        <input type="text" />
-        <label>SpO2:</label>
-        <input type="text" />
-        
-        <h2>Inspeção:</h2>
-        <input type="text" />
+        <div className='DivPA'>
+          <span>
+            <label>PAD:</label>
+            <input type="text" />
+          </span>
+          <span>
+            <label>PAS:</label>
+            <input type="text" />
+          </span>
+        </div>
 
-        <h2>Palpação:</h2>
-        <input type="text" />
+        <span>
+          <label>FR(irpm):</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>FC(bpm):</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>SpO2:</label>
+          <input type="text" />
+        </span>
 
-        <h2>AVD's - AVP's:</h2>
-        <input type="text" />
+        <h3>Inspeção:</h3>
+        <textarea className="TXTArea" />
 
-        <h2>Habilidade corporal:</h2>
-        <label>Destro:</label>
-        <input type="text" />
-        <label>Sinistro:</label>
-        <input type="text" />
-        <label>Ambidestro:</label>
-        <input type="text" />
+        <h3>Palpação:</h3>
+        <textarea className="TXTArea" />
 
-        <h2>Avaliação Subjetiva da DOR:</h2>
+        <h3>AVD's - AVP's:</h3>
+        <textarea className="TXTArea" />
+
+        <h3>Habilidade corporal:</h3>
+        <span className='SpanHC'>
+          <label>Destro: <input type="checkbox" /></label>
+          <label>Sinistro: <input type="checkbox" /></label>
+          <label>Ambidestro: <input type="checkbox" /></label>
+        </span>
+
+        <h3>Avaliação Subjetiva da DOR:</h3>
         <label> Caracteristica:</label>
-        <input type="text" />
+        <textarea className="TXTArea" />
 
-        <h2>Revisão de Sistemas:</h2>
-        <label>Alteração de peso:</label>
-        <input type="text" />
-        <label>Apetite:</label>
-        <input type="text" />
-        <label>Sono:</label>
-        <input type="text" />
-        <label>Pele:</label>
-        <input type="text" />
-        <label>Respiratório:</label>
-        <input type="text" />
-        <label>Cardiovascular:</label>
-        <input type="text" />
-        <label>Geniturinário:</label>
-        <input type="text" />
-        <label>Gastrointestinal:</label>
-        <input type="text" />
+        <h3>Revisão de Sistemas:</h3>
+        <span>
+          <label>Alteração de peso:</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>Apetite:</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>Sono:</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>Pele:</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>Respiratório:</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>Cardiovascular:</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>Geniturinário:</label>
+          <input type="text" />
+        </span>
+        <span>
+          <label>Gastrointestinal:</label>
+          <input type="text" />
+        </span>
 
-        <h2>Testes especiais em Ortopedia:</h2>
-        <input type="text" />
+        <h3>Testes especiais em Ortopedia:</h3>
+        <textarea className="TXTArea" />
 
-        <h2>Encurtamento (s) Muscular (es):</h2>
+        <h3>Encurtamento(s) Muscular(es):</h3>
 
         <div id='DivDiagnóstico'></div>
-        <input type="text" />
+        <textarea className="TXTArea" />
 
-        <h2>Diagnóstico Cinético Funcional:</h2>
-        <input type="text" />
+        <h3>Diagnóstico Cinético Funcional:</h3>
+        <textarea className="TXTArea" />
 
-        <h2>Perspectiva do paciente relacionado ao tratamento:</h2>
+        <h3>Perspectiva do paciente</h3>
 
         <div id='DivPlanoeConduta'></div>
-        <input type="text" />
+        <textarea className="TXTArea" />
 
-        <h2>Objetivos e Condutas do Programa de Tratamento:</h2>
-        <label>Objetivos Curto Prazo:</label>
-        <input type="text" />
+        <h3>Objetivos e Condutas</h3>
+        <span>
+          <label>Objetivos Curto Prazo:</label>
+          <input type="text" />
+        </span>
+        <span>
         <label>Condutas de Curto Prazo:</label>
         <input type="text" />
+        </span>
+        <span>
         <label>Objetivos de Médio Prazo:</label>
         <input type="text" />
+        </span>
+        <span>
         <label>Condutas de Médio Prazo:</label>
         <input type="text" />
+        </span>
+        <span>
         <label>Objetivos de Longo Prazo:</label>
         <input type="text" />
+        </span>
+        <span>
         <label>Condutas de Longo Prazo:</label>
         <input type="text" />
+        </span>
 
-        <h2>CIF:</h2>
-        <input type="text" />
+        <h3 title='Classificação Internacional de Funcionalidade'>CIF:</h3>
+        <textarea className="TXTArea" />
 
-        <h2>Orientações ao paciente:</h2>
-        <input type="text" />
+        <h3>Orientações ao paciente:</h3>
+        <textarea className="TXTArea" />
 
-        <h2>Acadêmico:</h2>
-        <input type="text" />
+        <h3>Acadêmico:</h3>
+        <textarea className="TXTArea" />
 
-        <h2>Surpervisor:</h2>
-        <input type="text" />
-
-
-
-
-
+        <h3>Surpervisor:</h3>
+        <textarea className="TXTArea" />
       </div>
+
+      <footer>
+        <button>Salvar</button>
+        <h2><span className='Span1'>FISIOTERAPIA</span> - <span className='Span2'>UNIPLAC</span></h2>
+      </footer>
     </>
   )
 }
