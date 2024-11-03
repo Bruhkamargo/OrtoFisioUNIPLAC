@@ -2,7 +2,25 @@ import { useState } from 'react';
 
 import './App.css'
 
+import Cal_DDN from './Functions/Age_calc';
+import CalcIMC from './Functions/IMC';
+
 const App = () => {
+  const [ArrayCadastro, SetArrayCadastro] = useState(['', '', '', '', '', 'Masculino', '', '', '', '', '', '']);
+  const [StrQP, SetStrQP] = useState('');
+  const [StrHDP, SetStrHDP] = useState('');
+  const [StrHistoriaSocial, SetStrHistoriaSocial] = useState('');
+  const [StrExames, SetStrExames] = useState('');
+  const [BoolMedicamentos, SetBoolMedicamentos] = useState(false);
+  const [BoolCirugias, SetBoolCirugias] = useState(false);
+  const [BoolTratamentos, SetBoolTratamentos] = useState(false);
+  const [IntPeso, SetIntPeso] = useState(0);
+  const [IntAltura, SetIntAltura] = useState(0);
+  const [ArrayIMC, SetArrayIMC] = useState(['', ''])
+  const [ArrayPA, SetArrayPA] = useState([0, 0])
+  const [IntFR, SetIntFR] = useState(0)
+  const [IntFC, SetIntFC] = useState(0)
+  const [IntSPO2, SetIntSPO2] = useState(0)
 
   return (
     <>
@@ -15,47 +33,56 @@ const App = () => {
 
         <span className='InputCad'>
           <label>Avaliador: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[0]} onChange={(e) => { ArrayCadastro[0] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Data: </label>
-          <input type="date" />
+          <input type="date" value={ArrayCadastro[1]} onChange={(e) => { ArrayCadastro[1] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Nome: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[2]} onChange={(e) => { ArrayCadastro[2] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Data de Nascimento: </label>
-          <input type="date" />
+          <input type="date" onBlur={(e) => { ArrayCadastro[4] = (Cal_DDN(e.target.value)[0]); SetArrayCadastro([...ArrayCadastro]) }}
+            value={ArrayCadastro[3]} onChange={(e) => { ArrayCadastro[3] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Idade: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[4]} readOnly />
+        </span>
+        <span className='InputCad'>
+          <label>Sexo: </label>
+          <select value={ArrayCadastro[5]} onChange={(e) => { ArrayCadastro[5] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} >
+            <option value=""> Selecione o Sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
         </span>
         <span className='InputCad'>
           <label>Telefone: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[6]} onChange={(e) => { ArrayCadastro[6] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Endereço: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[7]} onChange={(e) => { ArrayCadastro[7] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Profissão: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[8]} onChange={(e) => { ArrayCadastro[8] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Diagnóstico Médico: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[9]} onChange={(e) => { ArrayCadastro[9] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Nome do Médico: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[10]} onChange={(e) => { ArrayCadastro[10] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
         <span className='InputCad'>
           <label>Tempo de lesão: </label>
-          <input type="text" />
+          <input type="text" value={ArrayCadastro[11]} onChange={(e) => { ArrayCadastro[11] = e.target.value; SetArrayCadastro([...ArrayCadastro]) }} />
         </span>
 
       </div>
@@ -64,72 +91,96 @@ const App = () => {
         <h2>Anamnese:</h2>
         <span>
           <label>Queixa Principal:</label>
-          <textarea className="TXTArea" />
+          <textarea className="TXTArea" value={StrQP} onChange={(e) => { SetStrQP(e.target.value) }} />
         </span>
         <span>
           <label>HDP e HDA:</label>
-          <textarea className="TXTArea" />
+          <textarea className="TXTArea" value={StrHDP} onChange={(e) => { SetStrHDP(e.target.value) }} />
         </span>
         <span>
           <label>História Social:</label>
-          <textarea className="TXTArea" />
+          <textarea className="TXTArea" value={StrHistoriaSocial} onChange={(e) => { SetStrHistoriaSocial(e.target.value) }} />
         </span>
         <span>
           <label>Exames Complamentares:</label>
-          <input type='text'></input>
+          <textarea className="TXTArea" value={StrExames} onChange={(e) => { SetStrExames(e.target.value) }} />
         </span>
-        <span>{/**Sim ou não */}
+        <span className={BoolMedicamentos ? 'YNSpan' : ''}>{/**Sim ou não */}
           <label>Medicamentos em uso:</label>
-          <input type='text'></input>
+          <div className='DivRadio'>
+            <label>Sim - <input type='radio' checked={BoolMedicamentos ? true : false} onChange={() => { SetBoolMedicamentos(!BoolMedicamentos) }} /></label>
+            <label>Não - <input type='radio' checked={BoolMedicamentos ? false : true} onChange={() => { SetBoolMedicamentos(!BoolMedicamentos) }} /></label>
+          </div>
+          {BoolMedicamentos ?
+            <textarea className="TXTArea" value={StrExames} onChange={(e) => { SetStrExames(e.target.value) }} />
+            :
+            <></>}
         </span>
-        <span>{/**Sim ou não */}
+        <span className={BoolCirugias ? 'YNSpan' : ''}>{/**Sim ou não */}
           <label>Cirurgias:</label>
-          <input type='text'></input>
+          <div className='DivRadio'>
+            <label>Sim - <input type='radio' checked={BoolCirugias ? true : false} onChange={() => { SetBoolCirugias(!BoolCirugias) }} /></label>
+            <label>Não - <input type='radio' checked={BoolCirugias ? false : true} onChange={() => { SetBoolCirugias(!BoolCirugias) }} /></label>
+          </div>
+          {BoolCirugias ?
+            <textarea className="TXTArea" value={StrExames} onChange={(e) => { SetStrExames(e.target.value) }} />
+            :
+            <></>}
         </span>
-        <span>{/**Sim ou não */}
+        <span className={BoolTratamentos ? 'YNSpan' : ''}>{/**Sim ou não */}
           <label>Tratamentos anteriores:</label>
-          <input type='text'></input>
+          <div className='DivRadio'>
+            <label>Sim - <input type='radio' checked={BoolTratamentos ? true : false} onChange={() => { SetBoolTratamentos(!BoolTratamentos) }} /></label>
+            <label>Não - <input type='radio' checked={BoolTratamentos ? false : true} onChange={() => { SetBoolTratamentos(!BoolTratamentos) }} /></label>
+          </div>
+          {BoolTratamentos ?
+            <textarea className="TXTArea" value={StrExames} onChange={(e) => { SetStrExames(e.target.value) }} />
+            :
+            <></>}
         </span>
       </div>
 
-      <div id='DivAnamnese'>
+      <div id='DivExameFísico'>
         <h2>Exame Físico:</h2>
-        <span>
-          <label>Peso:</label>
-          <input type="text" />
+        <span className='SpanExFi'>
+          <label>Peso: (kg)</label>
+          <input type="number" value={IntPeso} onChange={(e) => { SetIntPeso(e.target.value) }} />
         </span>
-        <span>
-          <label>Altura:</label>
-          <input type="text" />
+        <span className='SpanExFi'>
+          <label>Altura: (cm)</label>
+          <input type="number" value={IntAltura} onChange={(e) => { SetIntAltura(e.target.value) }} onBlur={() => { SetArrayIMC(CalcIMC(IntPeso, IntAltura, ArrayCadastro[5])); }} />
         </span>
-        <span>
+        <span className='SpanExFi'>
+        <label>IMC Classificação:</label>
+          <input type="text" value={ArrayIMC[0]} readOnly />
+        </span>
+        <span className='SpanExFi'>
           <label>IMC Pontuação:</label>
-          <input type="text" />
+          <input type="text" value={ArrayIMC[1]} readOnly />
         </span>
 
         <h3>Sinais Vitais:</h3>
-        <div className='DivPA'>
-          <span>
-            <label>PAD:</label>
-            <input type="text" />
-          </span>
-          <span>
-            <label>PAS:</label>
-            <input type="text" />
-          </span>
-        </div>
 
-        <span>
-          <label>FR(irpm):</label>
-          <input type="text" />
+        <span className='SpanExFi PASPAD'>
+          <label>PA:</label>
+          <span>
+            <input type="number" value={ArrayPA[0]} onChange={(e) => {ArrayPA[0] = e.target.value; SetArrayPA([...ArrayPA])}}/>
+            <label>/</label>
+            <input type="number" value={ArrayPA[1]} onChange={(e) => {ArrayPA[1] = e.target.value; SetArrayPA([...ArrayPA])}}/>
+          </span>
         </span>
-        <span>
-          <label>FC(bpm):</label>
-          <input type="text" />
+
+        <span className='SpanExFi'>
+          <label>FR (irpm):</label>
+          <input type="number" value={IntFR} onChange={(e) => {SetIntFR(e.target.value)}}/>
         </span>
-        <span>
-          <label>SpO2:</label>
-          <input type="text" />
+        <span className='SpanExFi'>
+          <label>FC (bpm):</label>
+          <input type="number" value={IntFC} onChange={(e) => {SetIntFC(e.target.value)}}/>
+        </span>
+        <span className='SpanExFi'>
+          <label>SpO2: (%)</label>
+          <input type="number" value={IntSPO2} onChange={(e) => {SetIntSPO2(e.target.value)}}/>
         </span>
 
         <h3>Inspeção:</h3>
@@ -208,24 +259,24 @@ const App = () => {
           <input type="text" />
         </span>
         <span>
-        <label>Condutas de Curto Prazo:</label>
-        <input type="text" />
+          <label>Condutas de Curto Prazo:</label>
+          <input type="text" />
         </span>
         <span>
-        <label>Objetivos de Médio Prazo:</label>
-        <input type="text" />
+          <label>Objetivos de Médio Prazo:</label>
+          <input type="text" />
         </span>
         <span>
-        <label>Condutas de Médio Prazo:</label>
-        <input type="text" />
+          <label>Condutas de Médio Prazo:</label>
+          <input type="text" />
         </span>
         <span>
-        <label>Objetivos de Longo Prazo:</label>
-        <input type="text" />
+          <label>Objetivos de Longo Prazo:</label>
+          <input type="text" />
         </span>
         <span>
-        <label>Condutas de Longo Prazo:</label>
-        <input type="text" />
+          <label>Condutas de Longo Prazo:</label>
+          <input type="text" />
         </span>
 
         <h3 title='Classificação Internacional de Funcionalidade'>CIF:</h3>
