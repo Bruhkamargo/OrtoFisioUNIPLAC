@@ -75,7 +75,6 @@ export default async (Children) => {
 
     pdfDoc.addImage('./src/assets/Footer.jpg', "JPG", 0, 269, 210, 28);
 
-
     pdfDoc.addPage(); //Pagina 3
 
     pdfDoc.addImage('./src/assets/Header.jpg', "JPG", 0, 0, 210, 28);
@@ -119,9 +118,24 @@ export default async (Children) => {
     pdfDoc.text(`Ausculta Pulmonar: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia nisi necessitatibus dolore molestiae suscipit, eveniet soluta, ea voluptas explicabo delectus; Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia nisi necessitatibus dolore molestiae suscipit, eveniet soluta, ea voluptas explicabo delectus`, 15, 143, { maxWidth: 180, align: "left" });
     pdfDoc.text(`Ausculta Cardíaca: Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia nisi necessitatibus dolore molestiae suscipit, eveniet soluta, ea voluptas explicabo delectus; Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia nisi necessitatibus dolore molestiae suscipit, eveniet soluta, ea voluptas explicabo delectus`, 15, 165, { maxWidth: 180, align: "left" });
 
+    pdfDoc.text(`Lateralidade: Ambidestro `, 15, 187);
+
     pdfDoc.setFontSize(13);
-    pdfDoc.cell(15, 185, 180, 7, " "); pdfDoc.text("AVD's - AVP's:", 20, 191);
-    pdfDoc.cell(15, 192, 180, 63, " ");
+    pdfDoc.cell(15, 192, 180, 7, " "); pdfDoc.text("AVD's - AVP's:", 18, 198);
+    pdfDoc.cell(15, 199, 180, 63, " ");
+
+    pdfDoc.addImage('./src/assets/Footer.jpg', "JPG", 0, 269, 210, 28);
+
+    pdfDoc.addPage(); //Pagina 4
+
+    pdfDoc.addImage('./src/assets/Header.jpg', "JPG", 0, 0, 210, 28);
+
+    pdfDoc.setFont("helvetica", "bold");
+    pdfDoc.setFontSize(13);
+    pdfDoc.cell(15, 35, 180, 7, " "); pdfDoc.text('Inpeção:', 18, 41);
+    pdfDoc.cell(15, 42, 180, 70, " ");
+    pdfDoc.cell(15, 112, 180, 7, " "); pdfDoc.text('Palpação:', 18, 118);
+    pdfDoc.cell(15, 119, 180, 70, " ");
 
     pdfDoc.addImage('./src/assets/Footer.jpg', "JPG", 0, 269, 210, 28);
 

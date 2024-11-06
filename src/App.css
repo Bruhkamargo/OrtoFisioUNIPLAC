@@ -4,6 +4,10 @@ h2 {
   font-size: 25px;
 }
 
+img {
+  width: -webkit-fill-available;
+}
+
 #DivCad {
   height: auto;
   width: 100%;
@@ -134,7 +138,7 @@ h2 {
   align-items: center;
   padding: 2% 0;
 
-  & .SpanTxtArea{
+  & .SpanTxtArea {
     height: auto;
   }
 

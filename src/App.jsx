@@ -229,10 +229,17 @@ const App = () => {
           <textarea className="TXTArea" />
         </span>
 
+        <h3>Lateralidade:</h3>
+        <span className='SpanHC'>
+          <label>Destro: <input type="checkbox" value={'Option1'} checked={BoolLaterality === 'Option1'} onChange={handleLateralityChange} /></label>
+          <label>Sinistro: <input type="checkbox" value={'Option2'} checked={BoolLaterality === 'Option2'} onChange={handleLateralityChange} /></label>
+          <label>Ambidestro: <input type="checkbox" value={'Option3'} checked={BoolLaterality === 'Option3'} onChange={handleLateralityChange} /></label>
+        </span>
+
         <h3>AVD's - AVP's:</h3>
         <span className='SpanTxtArea'>
-          <textarea className="TXTArea" value={StrAVD} onChange={(e) => { SetStrAVD(e.target.value) }} 
-            placeholder='Atividade de Vida Diária e Vida Prática; Descreva as atividades executadas no dia à dia do paciente, podendo pontuar aqui os momentos de dispinéia expermentados por ele.'/>
+          <textarea className="TXTArea" value={StrAVD} onChange={(e) => { SetStrAVD(e.target.value) }}
+            placeholder='Atividade de Vida Diária e Vida Prática; Descreva as atividades executadas no dia à dia do paciente, podendo pontuar aqui os momentos de dispinéia expermentados por ele.' />
         </span>
 
         <h3>Inspeção:</h3>
@@ -245,13 +252,6 @@ const App = () => {
         <span className='SpanTxtArea'>
           <textarea className="TXTArea" value={StrPalpation} onChange={(e) => { SetStrPalpation(e.target.value) }}
             placeholder='Tonus, trofismo, presença de triggers points, dor a palpação (localização), edema local.' />
-        </span>
-
-        <h3>Lateralidade:</h3>
-        <span className='SpanHC'>
-          <label>Destro: <input type="checkbox" value={'Option1'} checked={BoolLaterality === 'Option1'} onChange={handleLateralityChange} /></label>
-          <label>Sinistro: <input type="checkbox" value={'Option2'} checked={BoolLaterality === 'Option2'} onChange={handleLateralityChange} /></label>
-          <label>Ambidestro: <input type="checkbox" value={'Option3'} checked={BoolLaterality === 'Option3'} onChange={handleLateralityChange} /></label>
         </span>
 
         <h3>Avaliação Subjetiva da DOR:</h3>
