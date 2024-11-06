@@ -134,6 +134,15 @@ h2 {
   align-items: center;
   padding: 2% 0;
 
+  & .SpanTxtArea{
+    height: auto;
+  }
+
+  & .SpanRevisaoDeSistema {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
   & .SpanExFi {
     display: flex;
     flex-direction: row;
