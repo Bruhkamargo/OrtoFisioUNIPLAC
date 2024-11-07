@@ -11,3 +11,7 @@ body {
     margin: 0;
     background-color: var(--cor-teste);
 }
+
+button {
+    cursor: pointer;
+}

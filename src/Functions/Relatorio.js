@@ -137,6 +137,58 @@ export default async (Children) => {
     pdfDoc.cell(15, 112, 180, 7, " "); pdfDoc.text('Palpação:', 18, 118);
     pdfDoc.cell(15, 119, 180, 70, " ");
 
+    pdfDoc.text("AVALIAÇÃO SUBJETIVA DA DOR", 110, 195, null, null, "center");
+
+    pdfDoc.setFont("helvetica", "normal");
+    pdfDoc.setFontSize(12);
+    pdfDoc.cell(15, 205, 36, 7, " "); pdfDoc.text('Data:', 17, 211);
+    pdfDoc.cell(51, 205, 36, 7, " "); pdfDoc.text('EVA:', 53, 211);
+    pdfDoc.cell(87, 205, 36, 7, " "); pdfDoc.text('Local:', 89, 211);
+    pdfDoc.cell(123, 205, 36, 7, " "); pdfDoc.text('Característica:', 125, 211);
+    pdfDoc.cell(159, 205, 36, 7, " "); pdfDoc.text('Quando Ocorre:', 161, 211);
+
+    pdfDoc.cell(15, 212, 36, 7, " ");
+    pdfDoc.cell(51, 212, 36, 7, " ");
+    pdfDoc.cell(87, 212, 36, 7, " ");
+    pdfDoc.cell(123, 212, 36, 7, " ");
+    pdfDoc.cell(159, 212, 36, 7, " ");
+
+    pdfDoc.cell(15, 219, 36, 7, " ");
+    pdfDoc.cell(51, 219, 36, 7, " ");
+    pdfDoc.cell(87, 219, 36, 7, " ");
+    pdfDoc.cell(123, 219, 36, 7, " ");
+    pdfDoc.cell(159, 219, 36, 7, " ");
+
+    pdfDoc.cell(15, 226, 36, 7, " ");
+    pdfDoc.cell(51, 226, 36, 7, " ");
+    pdfDoc.cell(87, 226, 36, 7, " ");
+    pdfDoc.cell(123, 226, 36, 7, " ");
+    pdfDoc.cell(159, 226, 36, 7, " ");
+
+    pdfDoc.cell(15, 233, 36, 7, " ");
+    pdfDoc.cell(51, 233, 36, 7, " ");
+    pdfDoc.cell(87, 233, 36, 7, " ");
+    pdfDoc.cell(123, 233, 36, 7, " ");
+    pdfDoc.cell(159, 233, 36, 7, " ");
+
+    pdfDoc.cell(15, 240, 36, 7, " ");
+    pdfDoc.cell(51, 240, 36, 7, " ");
+    pdfDoc.cell(87, 240, 36, 7, " ");
+    pdfDoc.cell(123, 240, 36, 7, " ");
+    pdfDoc.cell(159, 240, 36, 7, " ");
+
+    pdfDoc.cell(15, 247, 36, 7, " ");
+    pdfDoc.cell(51, 247, 36, 7, " ");
+    pdfDoc.cell(87, 247, 36, 7, " ");
+    pdfDoc.cell(123, 247, 36, 7, " ");
+    pdfDoc.cell(159, 247, 36, 7, " ");
+
+    pdfDoc.addImage('./src/assets/Footer.jpg', "JPG", 0, 269, 210, 28);
+
+    pdfDoc.addPage(); //Pagina 5
+
+    pdfDoc.addImage('./src/assets/Header.jpg', "JPG", 0, 0, 210, 28);
+
     pdfDoc.addImage('./src/assets/Footer.jpg', "JPG", 0, 269, 210, 28);
 
     // Save or display the PDF

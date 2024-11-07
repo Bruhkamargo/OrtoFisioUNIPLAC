@@ -29,11 +29,41 @@ const App = () => {
   const [StrPalpation, SetStrPalpation] = useState('');
   const [StrAVD, SetStrAVD] = useState('');
   const [BoolLaterality, SetBoolLaterality] = useState('Option1')
-  const [StrPainAssessment, SetStrPainAssessment] = useState('')
+  const [BoolPainAssessment, SetBoolPainAssessment] = useState([true])
+  const [PainAssessment0, SetPainAssessment0] = useState(['', 0, '', '', ''])
+  const [PainAssessment1, SetPainAssessment1] = useState(['', 0, '', '', ''])
+  const [PainAssessment2, SetPainAssessment2] = useState(['', 0, '', '', ''])
+  const [PainAssessment3, SetPainAssessment3] = useState(['', 0, '', '', ''])
+  const [PainAssessment4, SetPainAssessment4] = useState(['', 0, '', '', ''])
+  const [PainAssessment5, SetPainAssessment5] = useState(['', 0, '', '', ''])
 
   /**Handeds */
   const handleLateralityChange = (event) => {
     SetBoolLaterality(event.target.value);
+  };
+
+  // Função para adicionar uma nova dor
+  const addPainAssessment = () => {
+    console.log('addPainAssessment');
+    console.log(BoolPainAssessment);
+    SetBoolPainAssessment(prevState => {
+      // Se já atingiu o limite, não adiciona mais
+      if (prevState.length >= 6) return prevState;
+      // Adiciona uma nova dor como 'true' para mostrar o formulário
+      return [...prevState, true];
+    });
+  };
+
+  // Função para remover a última dor
+  const removePainAssessment = () => {
+    console.log('removePainAssessment');
+    console.log(BoolPainAssessment);
+    SetBoolPainAssessment(prevState => {
+      // Se já há apenas uma dor, mantém o formulário visível
+      if (prevState.length <= 1) return prevState;
+      // Remove a última dor
+      return prevState.slice(0, -1);
+    });
   };
 
   return (
@@ -255,9 +285,60 @@ const App = () => {
         </span>
 
         <h3>Avaliação Subjetiva da DOR:</h3>
-        <span className='SpanTxtArea'>
-          <textarea className="TXTArea" value={StrPainAssessment} onChange={(e) => { SetStrPainAssessment(e.target.value) }} placeholder='Caracteristica da dor' />
-        </span>
+        <div className='DivDOR'>
+          {BoolPainAssessment[0] == true ?
+            <span>
+              <label>Data de Inicio: <input type="date" value={PainAssessment0[0]} onChange={(e) => { PainAssessment0[0] = e.target.value; SetPainAssessment0([...PainAssessment0]) }} /> </label>
+              <label>EVA: ({PainAssessment0[1]}) <input type="range" min={0} max={10} step={1} value={PainAssessment0[1]} onChange={(e) => { PainAssessment0[1] = e.target.value; SetPainAssessment0([...PainAssessment0]) }} /> </label>
+              <label>Local: <input type="text" value={PainAssessment0[2]} onChange={(e) => { PainAssessment0[2] = e.target.value; SetPainAssessment0([...PainAssessment0])}}/> </label>
+              <label>Característica: <input type="text" value={PainAssessment0[3]} onChange={(e) => { PainAssessment0[3] = e.target.value; SetPainAssessment0([...PainAssessment0])}}/> </label>
+              <label>Quando Ocorre: <input type="text" value={PainAssessment0[4]} onChange={(e) => { PainAssessment0[4] = e.target.value; SetPainAssessment0([...PainAssessment0])}}/> </label>
+            </span> : <></>}
+          {BoolPainAssessment[1] == true ?
+            <span>
+              <label>Data de Inicio: <input type="date" value={PainAssessment1[0]} onChange={(e) => { PainAssessment1[0] = e.target.value; SetPainAssessment1([...PainAssessment1]) }} /> </label>
+              <label>EVA: ({PainAssessment1[1]}) <input type="range" min={0} max={10} step={1} value={PainAssessment1[1]} onChange={(e) => { PainAssessment1[1] = e.target.value; SetPainAssessment1([...PainAssessment1]) }} /> </label>
+              <label>Local: <input type="text" value={PainAssessment1[2]} onChange={(e) => { PainAssessment1[2] = e.target.value; SetPainAssessment1([...PainAssessment1])}}/> </label>
+              <label>Característica: <input type="text" value={PainAssessment1[3]} onChange={(e) => { PainAssessment1[3] = e.target.value; SetPainAssessment1([...PainAssessment1])}}/> </label>
+              <label>Quando Ocorre: <input type="text" value={PainAssessment1[4]} onChange={(e) => { PainAssessment1[4] = e.target.value; SetPainAssessment1([...PainAssessment1])}}/> </label>
+            </span> : <></>}
+          {BoolPainAssessment[2] == true ?
+            <span>
+              <label>Data de Inicio: <input type="date" value={PainAssessment2[0]} onChange={(e) => { PainAssessment2[0] = e.target.value; SetPainAssessment2([...PainAssessment2]) }} /> </label>
+              <label>EVA: ({PainAssessment2[1]}) <input type="range" min={0} max={10} step={1} value={PainAssessment2[1]} onChange={(e) => { PainAssessment2[1] = e.target.value; SetPainAssessment2([...PainAssessment2]) }} /> </label>
+              <label>Local: <input type="text" value={PainAssessment2[2]} onChange={(e) => { PainAssessment2[2] = e.target.value; SetPainAssessment2([...PainAssessment2])}}/> </label>
+              <label>Característica: <input type="text" value={PainAssessment2[3]} onChange={(e) => { PainAssessment2[3] = e.target.value; SetPainAssessment2([...PainAssessment2])}}/> </label>
+              <label>Quando Ocorre: <input type="text" value={PainAssessment2[4]} onChange={(e) => { PainAssessment2[4] = e.target.value; SetPainAssessment2([...PainAssessment2])}}/> </label>
+            </span> : <></>}
+          {BoolPainAssessment[3] == true ?
+            <span>
+              <label>Data de Inicio: <input type="date" value={PainAssessment3[0]} onChange={(e) => { PainAssessment3[0] = e.target.value; SetPainAssessment3([...PainAssessment3]) }} /> </label>
+              <label>EVA: ({PainAssessment3[1]}) <input type="range" min={0} max={10} step={1} value={PainAssessment3[1]} onChange={(e) => { PainAssessment3[1] = e.target.value; SetPainAssessment3([...PainAssessment3]) }} /> </label>
+              <label>Local: <input type="text" value={PainAssessment3[2]} onChange={(e) => { PainAssessment3[2] = e.target.value; SetPainAssessment3([...PainAssessment3])}}/> </label>
+              <label>Característica: <input type="text" value={PainAssessment3[3]} onChange={(e) => { PainAssessment3[3] = e.target.value; SetPainAssessment3([...PainAssessment3])}}/> </label>
+              <label>Quando Ocorre: <input type="text" value={PainAssessment3[4]} onChange={(e) => { PainAssessment3[4] = e.target.value; SetPainAssessment3([...PainAssessment3])}}/> </label>
+            </span> : <></>}
+          {BoolPainAssessment[4] == true ?
+            <span>
+              <label>Data de Inicio: <input type="date" value={PainAssessment4[0]} onChange={(e) => { PainAssessment4[0] = e.target.value; SetPainAssessment4([...PainAssessment4]) }} /> </label>
+              <label>EVA: ({PainAssessment4[1]}) <input type="range" min={0} max={10} step={1} value={PainAssessment4[1]} onChange={(e) => { PainAssessment4[1] = e.target.value; SetPainAssessment4([...PainAssessment4]) }} /> </label>
+              <label>Local: <input type="text" value={PainAssessment4[2]} onChange={(e) => { PainAssessment4[2] = e.target.value; SetPainAssessment4([...PainAssessment4])}}/> </label>
+              <label>Característica: <input type="text" value={PainAssessment4[3]} onChange={(e) => { PainAssessment4[3] = e.target.value; SetPainAssessment4([...PainAssessment4])}}/> </label>
+              <label>Quando Ocorre: <input type="text" value={PainAssessment4[4]} onChange={(e) => { PainAssessment4[4] = e.target.value; SetPainAssessment4([...PainAssessment4])}}/> </label>
+            </span> : <></>}
+          {BoolPainAssessment[5] == true ?
+            <span>
+              <label>Data de Inicio: <input type="date" value={PainAssessment5[0]} onChange={(e) => { PainAssessment5[0] = e.target.value; SetPainAssessment5([...PainAssessment5]) }} /> </label>
+              <label>EVA: ({PainAssessment5[1]}) <input type="range" min={0} max={10} step={1} value={PainAssessment5[1]} onChange={(e) => { PainAssessment5[1] = e.target.value; SetPainAssessment5([...PainAssessment5]) }} /> </label>
+              <label>Local: <input type="text" value={PainAssessment5[2]} onChange={(e) => { PainAssessment5[2] = e.target.value; SetPainAssessment5([...PainAssessment5])}}/> </label>
+              <label>Característica: <input type="text" value={PainAssessment5[3]} onChange={(e) => { PainAssessment5[3] = e.target.value; SetPainAssessment5([...PainAssessment5])}}/> </label>
+              <label>Quando Ocorre: <input type="text" value={PainAssessment5[4]} onChange={(e) => { PainAssessment5[4] = e.target.value; SetPainAssessment5([...PainAssessment5])}}/> </label>
+            </span> : <></>}
+          <span className='SpanButtonsDor'>
+            <button onClick={removePainAssessment}>- Descadastrar dor</button>
+            <button onClick={addPainAssessment}>+ Cadastrar dor</button>
+          </span>
+        </div>
 
         <h3>Revisão de Sistemas:</h3>
         <span className='SpanRevisaoDeSistema'>
