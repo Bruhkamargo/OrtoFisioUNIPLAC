@@ -127,8 +127,6 @@ img {
 }
 
 #DivExameFísico {
-  border-top: 2px solid;
-  border-color: red;
   height: auto;
   width: 100%;
   background-color: rgb(244, 247, 245);
@@ -189,6 +187,21 @@ img {
   & .SpanRevisaoDeSistema {
     height: 80px;
     margin-bottom: 10px;
+  }
+
+  & .SpanMarcha {
+    justify-content: space-around;
+    height: 65px;
+
+    & label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    & select {
+      width: 100%;
+      height: 30px;
+    }
   }
 
   & .SpanExFi {
@@ -277,9 +290,14 @@ footer {
 
   & button {
     width: 60%;
-    height: 35px;
+    height: 45px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 4px 5px black;
   }
-
+  & button:active {
+    box-shadow: none;
+  }
   & h2 {
     color: white;
 
