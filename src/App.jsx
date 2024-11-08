@@ -471,8 +471,8 @@ const App = () => {
           <label>Altura dos Passos (Direito)</label>
           <select value={ArrayMarcha[2]} onChange={(e) => { ArrayMarcha[2] = e.target.value; SetArrayMarcha([...ArrayMarcha]) }}>
             <option value=""></option>
-            <option value="0">Não sai completamento do chão</option>
-            <option value="1">Sai completamento do chão</option>
+            <option value="0">Não sai completamente do chão</option>
+            <option value="1">Sai completamente do chão</option>
           </select>
 
         </span>
@@ -489,8 +489,8 @@ const App = () => {
           <label>Altura dos Passos (Esquerdo)</label>
           <select value={ArrayMarcha[4]} onChange={(e) => { ArrayMarcha[4] = e.target.value; SetArrayMarcha([...ArrayMarcha]) }}>
             <option value=""></option>
-            <option value="0">Não sai completamento do chão</option>
-            <option value="1">Sai completamento do chão</option>
+            <option value="0">Não sai completamente do chão</option>
+            <option value="1">Sai completamente do chão</option>
           </select>
 
         </span >
@@ -508,7 +508,7 @@ const App = () => {
           <select value={ArrayMarcha[6]} onChange={(e) => { ArrayMarcha[6] = e.target.value; SetArrayMarcha([...ArrayMarcha]) }}>
             <option value=""></option>
             <option value="0">Paradas ou Passos descontínuos</option>
-            <option value="1">Passos Continuos</option>
+            <option value="1">Passos contínuos</option>
           </select>
 
         </span>
@@ -536,7 +536,7 @@ const App = () => {
           <label>Distância dos tronozelos</label>
           <select value={ArrayMarcha[9]} onChange={(e) => { ArrayMarcha[9] = e.target.value; SetArrayMarcha([...ArrayMarcha]) }}>
             <option value=""></option>
-            <option value="0">Tronozelos Sepadados</option>
+            <option value="0">Tronozelos Separados</option>
             <option value="1">Tronozelos quase se toncam enquanto anda</option>
           </select>
         </span>
