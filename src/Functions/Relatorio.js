@@ -1,5 +1,8 @@
 import jsPDF from "jspdf";
 
+import Header from '../assets/Header.png';
+import Footer from '../assets/Footer.png';
+
 /**
  * @description 
  * A folha padrão é A4, retrato usa como medida milimetros 
@@ -13,7 +16,7 @@ export default async (Patient) => {
 
     //addImage(imageData, format, x, y, width, height, alias, compression, rotation)
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(15);
     pdfDoc.text("FICHA DE AVALIAÇÃO : CLÍNICA ESCOLA DE FISIOTERAPIA", 110, 26, null, null, "center");
@@ -51,11 +54,11 @@ export default async (Patient) => {
 
     // Falta os TEXTOS AQUI
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 2
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(13);
@@ -83,11 +86,11 @@ export default async (Patient) => {
     pdfDoc.text(`${Patient[6]}`, 17, 195, { maxWidth: 176, align: "left" })
     pdfDoc.text(`${Patient[7]}`, 17, 239, { maxWidth: 176, align: "left" })
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 3
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(13);
@@ -153,11 +156,11 @@ export default async (Patient) => {
     pdfDoc.cell(15, 199, 180, 63, " ");
     pdfDoc.text(`${Patient[21]}`, 17, 204, { maxWidth: 176, align: "left" })
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 4
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(13);
@@ -219,11 +222,11 @@ export default async (Patient) => {
     pdfDoc.cell(123, 246, 36, 7, ' ');  pdfDoc.text(`${Patient[29][3]}`, 125, 251);/*Característica*/
     pdfDoc.cell(159, 246, 36, 7, ' ');  pdfDoc.text(`${Patient[29][4]}`, 161, 251);/*Quando Ocorre*/
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 5
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(13);
@@ -248,11 +251,11 @@ export default async (Patient) => {
     pdfDoc.text(`${Patient[36]}`, 15, 187, { maxWidth: 180, align: "left" });
     pdfDoc.text(`${Patient[37]}`, 15, 209, { maxWidth: 180, align: "left" });
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 6
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(13);
@@ -270,11 +273,11 @@ export default async (Patient) => {
     pdfDoc.text(`${Patient[39]}`, 17, 124, { maxWidth: 176, align: "left" })
     pdfDoc.text(`${Patient[40]}`, 17, 201, { maxWidth: 176, align: "left" })
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 7
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.text("ANÁLISE DE MARCHA", 110, 35, null, null, "center");
 
@@ -323,11 +326,11 @@ export default async (Patient) => {
     pdfDoc.cell(15, 191, 180, 70, " ");
     pdfDoc.text(`${Patient[42]}`, 17, 196, { maxWidth: 176, align: "left" })
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 8
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(13);
@@ -351,11 +354,11 @@ export default async (Patient) => {
 
     pdfDoc.cell(15, 221, 180, 22, " "); pdfDoc.text(`${Patient[49]}`, 17, 226, { maxWidth: 176, align: "left" });
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     pdfDoc.addPage(); //Pagina 8
 
-    pdfDoc.addImage('./src/assets/Header.png', "PNG", 0, 0, 210, 28);
+    pdfDoc.addImage(Header, "PNG", 0, 0, 210, 28);
 
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(13);
@@ -379,7 +382,7 @@ export default async (Patient) => {
     pdfDoc.line(55, 235, 150, 235);
     pdfDoc.text("Professor(a)", 105, 240, null, null, "center");
 
-    pdfDoc.addImage('./src/assets/Footer.png', "PNG", 0, 269, 210, 28);
+    pdfDoc.addImage(Footer, "PNG", 0, 269, 210, 28);
 
     // Save or display the PDF
     pdfDoc.save(`Avaliação - ${Patient[0][2]}.pdf`);
