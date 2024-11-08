@@ -320,7 +320,7 @@ const App = () => {
         <h3>Inspeção:</h3>
         <span className='SpanTxtArea'>
           <textarea className="TXTArea" value={StrInspection} onChange={(e) => { SetStrInspection(e.target.value) }} maxLength={1100}
-            placeholder='Observação do paciente (estago geral e emocional); Verficação do estado geral da pele, alterações cutâneas e articulares detalhadas e localização; Presença de curativos, fixadores, cicatrizes e manchas.&#10;Limite de 1000 Caracteres' />
+            placeholder='Observação do paciente (estado geral e emocional); Verficação do estado geral da pele, alterações cutâneas e articulares detalhadas e localização; Presença de curativos, fixadores, cicatrizes e manchas.&#10;Limite de 1000 Caracteres' />
         </span>
 
         <h3>Palpação:</h3>
@@ -533,11 +533,11 @@ const App = () => {
 
         </span>
         <span className='SpanMarcha'>
-          <label>Distância dos tronozelos</label>
+          <label>Distância dos Tornozelos</label>
           <select value={ArrayMarcha[9]} onChange={(e) => { ArrayMarcha[9] = e.target.value; SetArrayMarcha([...ArrayMarcha]) }}>
             <option value=""></option>
-            <option value="0">Tronozelos Separados</option>
-            <option value="1">Tronozelos quase se toncam enquanto anda</option>
+            <option value="0">Tornozelos Separados</option>
+            <option value="1">Tornozelos quase se tocam enquanto anda</option>
           </select>
         </span>
 
@@ -586,7 +586,7 @@ const App = () => {
 
         <h3>Perspectiva do paciente</h3>
         <span className='SpanTxtArea'>
-          <textarea className="TXTArea" maxLength={1000} value={StrPerspective} onChange={(e) => { SetStrPerspective(e.target.value) }} placeholder='Qual aperspectiva do paciente a cerca do tratamento. Limite de 1000 Caracteres' />
+          <textarea className="TXTArea" maxLength={1000} value={StrPerspective} onChange={(e) => { SetStrPerspective(e.target.value) }} placeholder='Qual a perspectiva do paciente a cerca do tratamento. Limite de 1000 Caracteres' />
         </span>
 
         <h3>Orientações ao paciente:</h3>
