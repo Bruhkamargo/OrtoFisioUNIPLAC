@@ -199,7 +199,7 @@ const App = () => {
           <textarea className="TXTArea" maxLength={600} value={StrHistoriaSocial} onChange={(e) => { SetStrHistoriaSocial(e.target.value) }} placeholder='História social do paciente&#10;Limite de 600 Caracteres' />
         </span>
         <span>
-          <label>Exames Complamentares:</label>
+          <label>Exames Complementares:</label>
           <textarea className="TXTArea" maxLength={600} value={StrExames} onChange={(e) => { SetStrExames(e.target.value) }} placeholder='Exames complementares do paciente&#10;Limite de 600 Caracteres' />
         </span>
         <span className={BoolMedicamentos ? 'YNSpan' : ''}>{/**Sim ou não */}
