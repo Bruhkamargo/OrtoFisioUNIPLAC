@@ -402,7 +402,7 @@ const App = () => {
             placeholder='Limite de 270 Caracteres' />
         </span>
         <span className='SpanRevisaoDeSistema'>
-          <label>Pele:</label>
+          <label>Tegumentar:</label>
           <textarea className="TXTArea" maxLength={270} value={StrSistema04} onChange={(e) => { SetStrSistema04(e.target.value) }}
             placeholder='Limite de 270 Caracteres' />
         </span>
