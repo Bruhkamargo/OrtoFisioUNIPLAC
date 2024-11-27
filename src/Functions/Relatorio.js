@@ -71,7 +71,7 @@ export default async (Patient) => {
     pdfDoc.cell(15, 132, 180, 7, " "); pdfDoc.text('Medicamentos em Uso:', 20, 137);
     pdfDoc.cell(15, 139, 180, 42, " ");
 
-    pdfDoc.cell(15, 183, 180, 7, " "); pdfDoc.text('Cirugias:', 20, 188);
+    pdfDoc.cell(15, 183, 180, 7, " "); pdfDoc.text('Cirurgias:', 20, 188);
     pdfDoc.cell(15, 190, 180, 35, " ");
 
     pdfDoc.cell(15, 227, 180, 7, " "); pdfDoc.text('Tratamentos Anteriores:', 20, 232);
@@ -319,8 +319,8 @@ export default async (Patient) => {
     /*                           */ pdfDoc.text('Sem flexão, balanço, não usa os braços ou apoio', 77, 170); pdfDoc.text(`2 ( ${Patient[41][8] == '2' ? "x" : ""} )`, 182, 170);
 
     pdfDoc.cell(15, 172, 60, 12, " "); pdfDoc.cell(75, 172, 105, 12, " "); pdfDoc.cell(180, 172, 15, 12, " ");
-    pdfDoc.text('Distância dos tronozelos', 18, 179); pdfDoc.text('Tronozelos Sepadados', 77, 177); pdfDoc.text(`0 ( ${Patient[41][9] == '0' ? "x" : " "} )`, 182, 177);
-    /*                                             */ pdfDoc.text('Tronozelos quase se toncam enquanto anda', 77, 182); pdfDoc.text(`1 ( ${Patient[41][9] == '1' ? "x" : " "} )`, 182, 182);
+    pdfDoc.text('Distância dos tornozelos', 18, 179); pdfDoc.text('Tornozelos Sepadados', 77, 177); pdfDoc.text(`0 ( ${Patient[41][9] == '0' ? "x" : " "} )`, 182, 177);
+    /*                                             */ pdfDoc.text('Tornozelos quase se toncam enquanto anda', 77, 182); pdfDoc.text(`1 ( ${Patient[41][9] == '1' ? "x" : " "} )`, 182, 182);
 
     pdfDoc.cell(15, 184, 180, 7, " "); pdfDoc.text('Descritivos', 18, 190);
     pdfDoc.cell(15, 191, 180, 70, " ");
